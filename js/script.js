@@ -11,7 +11,6 @@ function download(){
 };
 
 let arrow4 = document.querySelectorAll('.choice');
-
 let arrow3 = document.querySelectorAll('.arrow');
 
 function viewArrow(event){
@@ -35,6 +34,6 @@ function clickArrow(event){
 document.querySelectorAll('.choice')[0].addEventListener('click',viewArrow);
 document.querySelectorAll('.choice')[1].addEventListener('click',viewArrow);
 document.querySelectorAll('.choice')[2].addEventListener('click',viewArrow);
-document.getElementsByClassName('arrow')[0].addEventListener('click',clickArrow)
-document.getElementsByClassName('arrow')[1].addEventListener('click',clickArrow)
-document.getElementsByClassName('arrow')[2].addEventListener('click',clickArrow)
+document.getElementsByClassName('arrow')[0].addEventListener('click',clickArrow);
+document.getElementsByClassName('arrow')[1].addEventListener('click',clickArrow);
+document.getElementsByClassName('arrow')[2].addEventListener('click',clickArrow);

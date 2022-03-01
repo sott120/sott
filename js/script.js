@@ -23,17 +23,25 @@ function viewArrow(event){
         i.style.display = "none";
     });
 
-    event.target.childNodes[1].style.display = 'block'; // event가 일어난 두번째 자식요소(arrow)의 스타일을 변경
+    event.target.childNodes[2].style.display = 'block'; // event가 일어난 두번째 자식요소(arrow)의 스타일을 변경
 };
 
 function clickArrow(event){
     event.stopPropagation() //https://gcomx.blogspot.com/2018/02/blog-post_20.html
     console.log("화살표")
-
 };
+
 document.querySelectorAll('.choice')[0].addEventListener('click',viewArrow);
 document.querySelectorAll('.choice')[1].addEventListener('click',viewArrow);
 document.querySelectorAll('.choice')[2].addEventListener('click',viewArrow);
+document.querySelectorAll('.choice')[3].addEventListener('click',viewArrow);
+document.querySelectorAll('.choice')[4].addEventListener('click',viewArrow);
+document.querySelectorAll('.choice')[5].addEventListener('click',viewArrow);
+document.querySelectorAll('.choice')[6].addEventListener('click',viewArrow);
 document.getElementsByClassName('arrow')[0].addEventListener('click',clickArrow);
 document.getElementsByClassName('arrow')[1].addEventListener('click',clickArrow);
 document.getElementsByClassName('arrow')[2].addEventListener('click',clickArrow);
+document.getElementsByClassName('arrow')[3].addEventListener('click',clickArrow);
+document.getElementsByClassName('arrow')[4].addEventListener('click',clickArrow);
+document.getElementsByClassName('arrow')[5].addEventListener('click',clickArrow);
+document.getElementsByClassName('arrow')[6].addEventListener('click',clickArrow);

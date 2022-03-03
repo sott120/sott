@@ -10,8 +10,11 @@ function download(){
 })
 };
 
+//화살표 
+
 let arrow4 = document.querySelectorAll('.choice');
 let arrow3 = document.querySelectorAll('.arrow');
+let icon = document.querySelectorAll('.menu > .choice > span');
 
 function viewArrow(event){
     console.log("하하")
@@ -23,7 +26,7 @@ function viewArrow(event){
         i.style.display = "none";
     });
 
-    event.target.childNodes[2].style.display = 'block'; // event가 일어난 두번째 자식요소(arrow)의 스타일을 변경
+    event.target.childNodes[2].style.display = 'block'; // event가 일어난 세번째 자식요소(arrow)의 스타일을 변경
 };
 
 function clickArrow(event){
@@ -45,3 +48,31 @@ document.getElementsByClassName('arrow')[3].addEventListener('click',clickArrow)
 document.getElementsByClassName('arrow')[4].addEventListener('click',clickArrow);
 document.getElementsByClassName('arrow')[5].addEventListener('click',clickArrow);
 document.getElementsByClassName('arrow')[6].addEventListener('click',clickArrow);
+
+
+
+
+
+
+
+function cercleClick(event){
+// console.log(event.target.classList);
+
+    if (event.target.classList[1] === "choice_click") {
+        event.target.classList.remove("choice_click");
+    } else { 
+        for (let i = 0; i < arrow4.length; i++) {
+            arrow4[i].classList.remove("choice_click");
+        }
+
+        event.target.classList.add("choice_click")
+    }
+}
+
+function init() {
+    for (let i = 0; i < arrow4.length; i++) {
+      arrow4[i].addEventListener("click", cercleClick);
+    }
+  }
+
+  init();

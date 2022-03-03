@@ -1,0 +1,289 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 리셋 끝 */
+
+body{
+    width: 100%;
+    height: 100%;
+    }    
+
+.container{
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.all_wrap{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+
+}
+
+
+.menu{
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+
+}
+
+
+
+.choice{
+    width: 80px; height: 80px;
+    background: rgb(221, 221, 221);
+    border-radius: 50px;
+    margin-top: 40px;
+    /*박성현 => 선택 전 후의 border 사이즈 통일*/
+    border:4px solid rgb(201, 201, 201);
+    border-style: dashed;
+    /*박성현 => 선택 시 마다 요소가 선택되어 드래그가 되는것을 방지하였습니다.*/
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;
+
+}
+
+.choice:nth-child(1){
+    margin-top: 0px;
+}
+
+
+.choice_click{
+    background: #8E6AB7;
+    border: 4px solid #57416D;
+}
+
+
+
+.arrow {
+    display: none;
+    position: relative;
+
+}
+
+.arrow_active.arrow {
+    display: block;
+    position: relative;
+
+}
+
+.arrow_L{
+    position: absolute;
+    display: block;
+    transform: translateY(-50%);
+    left: -21px;
+    margin-left: -8px;
+}
+
+
+.arrow_R{
+    position: absolute;
+    display: block;
+    transform: translateY(-50%);
+    left:80px;
+    margin-left: 8px;
+}
+
+
+/* choice_clilk이 활성화되면, arrow_RL의 콘텐츠를 변경,
+    활성화이미지는 big_arrow로 size 맞춰서 해놨습니다.
+    근데 생각해보니 이러면 arrow를 두번 클릭했을 때 회색이 되니까 마치 기능이 off가 된거같은 느낌을 줍니다..
+    두번 클릭했을 때 화살표를 사라지게 할거면 화살표에 색을 주나마나고....고민해보십시다
+    */
+
+ .choice_click .arrow_R {
+    width: 21px;
+    content: url(/sorce/big_arrow_R.png);
+}
+
+.choice_click .arrow_L {
+    width: 21px;
+    content: url(/sorce/big_arrow_L.png);
+}
+
+
+.card_wrap{
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+}
+
+#card{
+    position: relative;
+    margin: 0 30px;
+}
+
+.human{
+    position: absolute;
+    width: 300px;
+    top: 31px;
+    left: 53px;
+}
+
+.human_body{
+    position: absolute;
+    z-index: 2;
+}
+
+#card > div.card_human  ul > li > img{
+    position: absolute;
+    width: 300px;
+    top: 31px;
+    left: 53px;
+}
+
+
+.hair{
+    position: absolute;
+    z-index: 5;
+}
+
+.brows{
+    position: absolute;
+    z-index: 4;
+}
+
+.eyes{
+    position: absolute;
+    z-index: 6;
+}
+
+.lips{
+    position: absolute;
+    z-index: 3;
+}
+
+.cloth{
+    position: absolute;
+    z-index: 7;
+}
+
+.swiper{
+    width:  967px;
+    height: 487px;
+}
+
+
+#card > div.card_human  ul > li{
+    display: none;
+}
+
+
+#card > div.card_human  ul > li:first-child{
+    display: block;
+}
+
+
+.card_bg{
+    image-rendering: -webkit-optimize-contrast;
+    position: relative;
+    left: 61px;
+    z-index: -9;
+    transform: translateY(-103%);
+}
+/* 이거 카드배경 높이를 딱 맞추는 방법 모르겠음 */
+
+.big_arrow_L .big_arrow_R{  
+  max-height: 44px;
+}
+
+
+button{
+    position: relative;
+    left: 50%;
+    transform : translateX(-50%);
+    top: 100px;
+    width: 140px;
+    height: 45px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #8f6ab7;
+    box-shadow: 0px 15px 20px rgba(58, 18, 82, 0.4);
+    color: #fff;
+    
+  }
+
+
+
+.menu > .choice > span{
+    pointer-events: none;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px; 
+    color: #57416d;
+
+}
+
+.icon_active{
+    font-size: 50px; 
+    color: #ffffff;
+}
+
+
+.bg{width: 100%; height: 100%; position: absolute; z-index: -10; top:0px; left: 0px; background-color: #eee;}
+

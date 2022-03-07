@@ -32,7 +32,14 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    /*마우스 선택방지*/
+    -ms-user-select: none; 
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
+
 ol, ul {
 	list-style: none;
 }
@@ -138,13 +145,6 @@ body{
     border: 4px solid rgb(201, 201, 201);
     border-style: dashed;
 
-    /*마우스 선택방지..클릭할때 선택되는게 불편할거같아서 추가해봄 --굿밥*/
-    -ms-user-select: none; 
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
- 
 }
 
 .choice:nth-child(1){
@@ -249,6 +249,7 @@ body{
 .swiper{
     width:  967px;
     height: 487px;
+    
 }
 
 

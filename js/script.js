@@ -1,4 +1,5 @@
 
+//화면 이미지로 저장
 function download(){
     html2canvas(document.querySelector("#card")).then(canvas => {
     // document.body.appendChild(canvas)
@@ -20,14 +21,11 @@ month = date.getMonth() + 1;
 day = date.getDate();
 if ( month < 10) month = "0" + month;
 if ( day < 10) day = "0" + day;
-console.log(day)
 document.getElementById("date").value = year + month + day;
 
 
 
-
-
-//화살표
+//동그라미 클릭 시 작동
 
 let arrow4 = document.querySelectorAll('.choice');
 let arrow3 = document.querySelectorAll('.arrow');
@@ -39,7 +37,7 @@ function clickArrow(event){
 };
 
 function cercleClick(event){
-    // console.log(event.target.classLi
+
         if (event.target.classList[1] === "choice_click") {
             event.target.classList.remove("choice_click");
             event.target.childNodes[2].classList.remove("arrow_active");
@@ -61,68 +59,79 @@ function cercleClick(event){
           arrow4[i].addEventListener("click", cercleClick);
           arrow3[i].addEventListener("click",clickArrow);
         }
-      }
-      init();
+      };
+
+    init();
+   
 
 
+    //화살표 클릭 시 작동
+    // https://goddino.tistory.com/45
 
-      let num = 1;
+      let num1 = 1;
+      let num2 = 1;
+      let num3 = 1;
+      let num4 = 1;
+      let num5 = 1;
+
+      
       function hairSlide(idx){
+
           if (idx) {
-              if (num == 8) return;
-              num++;
+              if (num1 == 8) return;
+              num1++;
           } else {
-              if (num == 1) return;
-              num--;
+              if (num1 == 1) return;
+              num1--;
           }
         let hairImg = document.getElementById("hair");
-        hairImg.setAttribute("src", "/sorce/hair0" + num + ".png");
+        hairImg.setAttribute("src", "/sorce/hair0" + num1 + ".png");
       };
 
       function browSlide(idx){
         if (idx) {
-            if (num == 8) return;
-            num++;
+            if (num2 == 8) return;
+            num2++;
         } else {
-            if (num == 1) return;
-            num--;
+            if (num2 == 1) return;
+            num2--;
         }
       let browsImg = document.getElementById("brows");
-      browsImg.setAttribute("src", "/sorce/brows0" + num + ".png");
+      browsImg.setAttribute("src", "/sorce/brows0" + num2 + ".png");
     };
 
     function eyesSlide(idx){
         if (idx) {
-            if (num == 6) return;
-            num++;
+            if (num3 == 6) return;
+            num3++;
         } else {
-            if (num == 1) return;
-            num--;
+            if (num3 == 1) return;
+            num3--;
         }
       let eyesImg = document.getElementById("eyes");
-      eyesImg.setAttribute("src", "/sorce/eyes0" + num + ".png");
+      eyesImg.setAttribute("src", "/sorce/eyes0" + num3 + ".png");
     };
 
     function lipsSlide(idx){
         if (idx) {
-            if (num == 7) return;
-            num++;
+            if (num4 == 7) return;
+            num4++;
         } else {
-            if (num == 1) return;
-            num--;
+            if (num4 == 1) return;
+            num4--;
         }
       let lipsImg = document.getElementById("lips");
-      lipsImg.setAttribute("src", "/sorce/lips0" + num + ".png");
+      lipsImg.setAttribute("src", "/sorce/lips0" + num4 + ".png");
     };
 
     function clothSlide(idx){
         if (idx) {
-            if (num == 8) return;
-            num++;
+            if (num5 == 8) return;
+            num5++;
         } else {
-            if (num == 1) return;
-            num--;
+            if (num5 == 1) return;
+            num5--;
         }
       let clothImg = document.getElementById("cloth");
-      clothImg.setAttribute("src", "/sorce/cloth0" + num + ".png");
+      clothImg.setAttribute("src", "/sorce/cloth0" + num5 + ".png");
     };
